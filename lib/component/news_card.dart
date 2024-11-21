@@ -3,27 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:news_app/models/news.dart';
 import 'package:news_app/services/news_service.dart';
 
-class NewsCard extends StatefulWidget {
+class NewsCard extends StatelessWidget {
+  final List<News> articleList;
 
-  NewsCard({super.key});
-
-  @override
-  State<NewsCard> createState() => _NewsCardState();
-}
-
-class _NewsCardState extends State<NewsCard> {
-  List<News> articleList = [];
-  @override
-  void initState() {
-    super.initState();
-    getGeneralNews();
-  }
-  Future<void> getGeneralNews() async {
-    articleList = await NewsService(Dio()).getNews();
-    setState(() {
-
-    });
-  }
+  NewsCard({required this.articleList});
 
   @override
   Widget build(BuildContext context) {
