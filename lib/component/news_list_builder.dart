@@ -1,16 +1,25 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/component/news_card.dart';
 import 'package:news_app/models/news.dart';
 import 'package:news_app/services/news_service.dart';
 
-class NewsListBuilder extends StatelessWidget {
-  bool isLoading = true;
+class NewsListBuilder extends StatefulWidget {
+  @override
+  State<NewsListBuilder> createState() => _NewsListBuilderState();
+}
+class _NewsListBuilderState extends State<NewsListBuilder> {
+  var future;
+  @override
+  void initState() {
+    super.initState();
+    future = NewsService(Dio()).getNews();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-        future: NewsService(Dio()).getNews(),
+    return FutureBuilder<List<News>>(
+        future: future,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return NewsCard(articleList: snapshot.data!);
