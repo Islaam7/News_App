@@ -1,11 +1,17 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'news_list_builder.dart';
+
 class CategoryView extends StatelessWidget{
+  final String category;
+  CategoryView({this.category = 'general'});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:Center(child: Text('Hello')) ,
+      body:Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: CustomScrollView(slivers: [NewsListBuilder(category: category)]),
+      ),
     );
   }
 

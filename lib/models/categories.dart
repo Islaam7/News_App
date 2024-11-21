@@ -1,3 +1,4 @@
 class Categories{
-  List<String> categories = ['Business', 'Sports', 'Science', 'Health'];
+  List<String> categoriesName = ['Business', 'Sports', 'Science', 'Health'];
+  List<String> categoriesKey = ['business', 'sports', 'science', 'health'];
 }

@@ -16,11 +16,12 @@ class CategoryList extends StatelessWidget {
       height: 160,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: categories.categories.length,
+        itemCount: categories.categoriesName.length,
         itemBuilder: (context, index) {
           return BannerWidget(
+            category: categories.categoriesKey[index],
             src: images.images[index],
-            text: categories.categories[index],
+            text: categories.categoriesName[index],
           );
         },
       ),

@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:news_app/component/category_view.dart';
 
 class BannerWidget extends StatelessWidget {
-  AssetImage? src;
-  String? text;
-
-  BannerWidget({this.src, this.text});
+  AssetImage src;
+  String text;
+  String category;
+  BannerWidget({required this.src, required this.text, this.category = 'general'});
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
         Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-          return CategoryView();
+          return CategoryView( category: category );
         }));
       },
       child: Padding(
