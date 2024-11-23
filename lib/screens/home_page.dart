@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/component/category_list.dart';
-import 'package:news_app/component/news_card.dart';
-
+import 'package:news_app/values/colors.dart';
+import '../component/actions.dart';
+import '../component/app_bar_leading.dart';
+import '../component/carousel_slider.dart';
+import '../component/header.dart';
 import '../component/news_list_builder.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,37 +15,29 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: MyColor.white,
       appBar: AppBar(
-        title: const Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Text(
-              'News',
-              style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w600),
-            ),
-            Text(
-              'Cloud',
-              style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.amber,
-                  fontWeight: FontWeight.w600),
-            ),
-          ],
-        ),
+        elevation: 0,
+        backgroundColor: MyColor.white,
+        leading: AppBarLeading(),
+        actions: [
+          AppBarAction()
+        ],
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
         child: CustomScrollView(
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           slivers: [
-            SliverToBoxAdapter(
-              child: CategoryList()
+            const SliverToBoxAdapter(
+              child: Header()
             ),
-            SliverToBoxAdapter(child: SizedBox(height: 50)),
+            const SliverToBoxAdapter(
+              child: SizedBox(height: 16)
+            ), SliverToBoxAdapter(
+              child: CustomCarouselSlider()
+            ),
+            const SliverToBoxAdapter(child: SizedBox(height: 50)),
             NewsListBuilder(),
           ],
         ),

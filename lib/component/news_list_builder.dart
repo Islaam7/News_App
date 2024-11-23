@@ -28,8 +28,8 @@ class _NewsListBuilderState extends State<NewsListBuilder> {
           } else if (snapshot.hasError) {
             return const Text('Opps, Try later');
           } else {
-            return SliverToBoxAdapter(
-              child: const Center(child: CircularProgressIndicator()),
+            return const SliverToBoxAdapter(
+              child: Center(child: CircularProgressIndicator()),
             );
           }
         });
