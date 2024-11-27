@@ -3,6 +3,7 @@ import 'package:news_app/values/colors.dart';
 import '../component/actions.dart';
 import '../component/app_bar_leading.dart';
 import '../component/carousel_slider.dart';
+import '../component/category_list_builder.dart';
 import '../component/header.dart';
 import '../component/news_list_builder.dart';
 
@@ -35,7 +36,8 @@ class _HomePageState extends State<HomePage> {
             const SliverToBoxAdapter(
               child: SizedBox(height: 16)
             ), SliverToBoxAdapter(
-              child: CustomCarouselSlider()
+              child:
+              CategoryListBuilder(category: 'general')
             ),
             const SliverToBoxAdapter(child: SizedBox(height: 50)),
             NewsListBuilder(),

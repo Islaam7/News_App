@@ -12,7 +12,7 @@ class AppBarAction extends StatelessWidget {
           width: Dimension.circleWidth,
           height: Dimension.circleHeight,
           decoration: BoxDecoration(
-              color: MyColor.grayWhite,
+              color: MyColor.greyWhite,
               borderRadius: BorderRadius.circular(Dimension.circleRadius)
           ),
           child: GestureDetector(
@@ -28,7 +28,7 @@ class AppBarAction extends StatelessWidget {
           width: Dimension.circleWidth,
           height: Dimension.circleHeight,
           decoration: BoxDecoration(
-              color: MyColor.grayWhite,
+              color: MyColor.greyWhite,
               borderRadius: BorderRadius.circular(Dimension.circleRadius)
           ),
           child: GestureDetector(
