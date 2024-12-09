@@ -1,2 +1,2 @@
 # News App
-![846shots_so](https://github.com/user-attachments/assets/185a7047-42aa-4519-b015-073f8168c81f)
+![725shots_so](https://github.com/user-attachments/assets/2cfc4ef0-123f-400b-a733-885be7c11677)
